@@ -13,7 +13,7 @@ const stats = [
   },
   {
     number: "4",
-    label: "Segmentos: Empresas • Residências • Usinas • Áreas Rurais",
+    label: "Tipos de Projetos",
     icon: Building2,
   },
   {
