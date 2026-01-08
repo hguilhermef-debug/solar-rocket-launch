@@ -8,6 +8,8 @@ import residencia2 from "@/assets/residencia-2.png";
 import residencia3 from "@/assets/residencia-3.png";
 import residencia4 from "@/assets/residencia-4.png";
 import usina1 from "@/assets/usina-1.jpg";
+import rural1 from "@/assets/rural-1.jpg";
+import rural2 from "@/assets/rural-2.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -46,8 +48,8 @@ const services = [
     title: "Espaços Rurais",
     description: "Soluções para sítios, fazendas e áreas agrícolas. Energia limpa para propriedades rurais.",
     highlight: "Instalação adaptada ao terreno",
-    images: [],
-    hasCarousel: false,
+    images: [rural1, rural2],
+    hasCarousel: true,
   },
   {
     icon: Settings,
@@ -88,7 +90,7 @@ const ServicesSection = () => {
               key={index}
               className="card-premium overflow-hidden group transition-all duration-300 hover:border-primary/30"
             >
-              {/* Image section - Carousel for Empresas and Residências */}
+              {/* Image section - Carousel */}
               {service.hasCarousel && service.images.length > 0 && (
                 <div className="relative h-56 overflow-hidden">
                   <Carousel className="w-full h-full" opts={{ loop: true }}>
@@ -106,7 +108,6 @@ const ServicesSection = () => {
                     <CarouselPrevious className="left-2 h-8 w-8 bg-background/80 hover:bg-background border-primary/30" />
                     <CarouselNext className="right-2 h-8 w-8 bg-background/80 hover:bg-background border-primary/30" />
                   </Carousel>
-                  <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent pointer-events-none" />
                 </div>
               )}
               
@@ -118,7 +119,6 @@ const ServicesSection = () => {
                     alt={`Projeto ${service.title}`}
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                 </div>
               )}
               
