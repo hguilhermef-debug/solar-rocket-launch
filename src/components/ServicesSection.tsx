@@ -17,6 +17,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import WhatsAppButton from "./WhatsAppButton";
 
 const services = [
   {
@@ -143,6 +144,10 @@ const ServicesSection = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <WhatsAppButton size="large" />
         </div>
       </div>
     </section>

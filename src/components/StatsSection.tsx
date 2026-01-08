@@ -1,4 +1,4 @@
-import { CheckCircle2, Building2, Calendar } from "lucide-react";
+import { CheckCircle2, Building2, Calendar, TrendingUp } from "lucide-react";
 
 const stats = [
   {
@@ -15,6 +15,11 @@ const stats = [
     number: "4",
     label: "Tipos de Projetos",
     icon: Building2,
+  },
+  {
+    number: "+90%",
+    label: "de Economia Comprovada",
+    icon: TrendingUp,
   },
 ];
 
