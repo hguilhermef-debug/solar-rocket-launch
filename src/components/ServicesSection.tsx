@@ -72,7 +72,7 @@ const ServicesSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+      <div className="absolute inset-0 bg-background/90" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
