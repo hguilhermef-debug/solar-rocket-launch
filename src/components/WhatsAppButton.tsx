@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 const WHATSAPP_LINK = "https://wa.me/5511951296429?text=Ol%C3%A1!%20Venho%20do%20site%20e%20gostaria%20de%20solicitar%20um%20Or%C3%A7amento%20Agora!%20";
 
@@ -27,7 +27,7 @@ const WhatsAppButton = ({ className = "", size = "default" }: WhatsAppButtonProp
       rel="noopener noreferrer"
       className={`btn-whatsapp text-primary-foreground font-bold ${sizeClasses[size]} ${className}`}
     >
-      <MessageCircle size={iconSizes[size]} fill="currentColor" />
+      <WhatsAppIcon size={iconSizes[size]} />
       SOLICITAR ORÇAMENTO AGORA
     </a>
   );

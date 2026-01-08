@@ -1,4 +1,4 @@
-import { CheckCircle2, MapPin, Building2, Calendar } from "lucide-react";
+import { CheckCircle2, Building2, Calendar } from "lucide-react";
 
 const stats = [
   {
@@ -10,11 +10,6 @@ const stats = [
     number: "+10",
     label: "Anos de Mercado",
     icon: Calendar,
-  },
-  {
-    number: "2",
-    label: "Estados: SP e SC",
-    icon: MapPin,
   },
   {
     number: "4",
