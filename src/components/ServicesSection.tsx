@@ -1,5 +1,7 @@
 import { Building2, Home, Factory, Trees, Settings } from "lucide-react";
 import empresasImg from "@/assets/empresas.jpg";
+import residenciasImg from "@/assets/residencias.jpg";
+import usinasImg from "@/assets/usinas.jpg";
 
 const services = [
   {
@@ -7,30 +9,35 @@ const services = [
     title: "Empresas",
     description: "Reduza custos operacionais e multiplique seus resultados financeiros eliminando gastos com energia elétrica.",
     highlight: "Economia de até R$ 312.000/ano",
+    image: empresasImg,
   },
   {
     icon: Home,
     title: "Residências",
     description: "Conforto, economia e sustentabilidade para sua casa. Independência das distribuidoras de energia.",
     highlight: "Até 90% de economia na conta",
+    image: residenciasImg,
   },
   {
     icon: Factory,
     title: "Usinas Solares",
     description: "Sistemas de grande porte para geração massiva de energia. Venda ou transfira créditos para outros empreendimentos.",
     highlight: "Renda mensal significativa",
+    image: usinasImg,
   },
   {
     icon: Trees,
     title: "Espaços Rurais",
     description: "Soluções para sítios, fazendas e áreas agrícolas. Energia limpa para propriedades rurais.",
     highlight: "Instalação adaptada ao terreno",
+    image: null,
   },
   {
     icon: Settings,
     title: "Projetos Personalizados",
     description: "Expansões, múltiplas unidades e consumo elevado. Projetos sob demanda para necessidades específicas.",
     highlight: "Solução sob medida",
+    image: null,
   },
 ];
 
@@ -61,24 +68,38 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="card-premium p-6 md:p-8 group transition-all duration-300 hover:border-primary/30"
+              className="card-premium overflow-hidden group transition-all duration-300 hover:border-primary/30"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <service.icon className="w-7 h-7 text-primary" />
-              </div>
+              {/* Image section */}
+              {service.image && (
+                <div className="relative h-40 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={`Projeto ${service.title}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+                </div>
+              )}
               
-              <h3 className="text-xl font-bold text-foreground mb-3 font-display">
-                {service.title}
-              </h3>
-              
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                {service.description}
-              </p>
-              
-              <div className="pt-4 border-t border-border">
-                <span className="text-sm font-medium text-primary">
-                  {service.highlight}
-                </span>
+              <div className="p-6 md:p-8">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <service.icon className="w-7 h-7 text-primary" />
+                </div>
+                
+                <h3 className="text-xl font-bold text-foreground mb-3 font-display">
+                  {service.title}
+                </h3>
+                
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                
+                <div className="pt-4 border-t border-border">
+                  <span className="text-sm font-medium text-primary">
+                    {service.highlight}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
