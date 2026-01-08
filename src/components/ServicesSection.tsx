@@ -17,6 +17,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import WhatsAppButton from "./WhatsAppButton";
 
 const services = [
@@ -94,7 +95,11 @@ const ServicesSection = () => {
               {/* Image section - Carousel */}
               {service.hasCarousel && service.images.length > 0 && (
                 <div className="relative h-56 overflow-hidden">
-                  <Carousel className="w-full h-full" opts={{ loop: true }}>
+                  <Carousel 
+                    className="w-full h-full" 
+                    opts={{ loop: true }}
+                    plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}
+                  >
                     <CarouselContent className="h-full">
                       {service.images.map((img, idx) => (
                         <CarouselItem key={idx} className="h-full">
