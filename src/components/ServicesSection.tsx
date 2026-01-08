@@ -101,7 +101,7 @@ const ServicesSection = () => {
                           <img 
                             src={img} 
                             alt={`Projeto ${service.title} ${idx + 1}`}
-                            className="w-full h-56 object-cover object-top"
+                            className="w-full h-56 object-contain bg-muted/50"
                           />
                         </CarouselItem>
                       ))}
