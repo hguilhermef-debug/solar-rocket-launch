@@ -1,7 +1,13 @@
 import { Building2, Home, Factory, Trees, Settings } from "lucide-react";
-import empresasImg from "@/assets/empresas.jpg";
-import residenciasImg from "@/assets/residencias.jpg";
-import usinasImg from "@/assets/usinas.jpg";
+import empresa1 from "@/assets/empresa-1.jpg";
+import empresa2 from "@/assets/empresa-2.jpg";
+import empresa3 from "@/assets/empresa-3.jpg";
+import empresa4 from "@/assets/empresa-4.jpg";
+import residencia1 from "@/assets/residencia-1.png";
+import residencia2 from "@/assets/residencia-2.png";
+import residencia3 from "@/assets/residencia-3.png";
+import residencia4 from "@/assets/residencia-4.png";
+import usina1 from "@/assets/usina-1.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -10,21 +16,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// Posições para recortar cada uma das 4 imagens do grid 2x2
-const imagePositions = [
-  "0% 0%",      // top-left
-  "100% 0%",    // top-right
-  "0% 100%",    // bottom-left
-  "100% 100%",  // bottom-right
-];
-
 const services = [
   {
     icon: Building2,
     title: "Empresas",
     description: "Reduza custos operacionais e multiplique seus resultados financeiros eliminando gastos com energia elétrica.",
     highlight: "Economia de até R$ 312.000/ano",
-    image: empresasImg,
+    images: [empresa1, empresa2, empresa3, empresa4],
     hasCarousel: true,
   },
   {
@@ -32,7 +30,7 @@ const services = [
     title: "Residências",
     description: "Conforto, economia e sustentabilidade para sua casa. Independência das distribuidoras de energia.",
     highlight: "Até 90% de economia na conta",
-    image: residenciasImg,
+    images: [residencia1, residencia2, residencia3, residencia4],
     hasCarousel: true,
   },
   {
@@ -40,7 +38,7 @@ const services = [
     title: "Usinas Solares",
     description: "Sistemas de grande porte para geração massiva de energia. Venda ou transfira créditos para outros empreendimentos.",
     highlight: "Renda mensal significativa",
-    image: usinasImg,
+    images: [usina1],
     hasCarousel: false,
   },
   {
@@ -48,7 +46,7 @@ const services = [
     title: "Espaços Rurais",
     description: "Soluções para sítios, fazendas e áreas agrícolas. Energia limpa para propriedades rurais.",
     highlight: "Instalação adaptada ao terreno",
-    image: null,
+    images: [],
     hasCarousel: false,
   },
   {
@@ -56,7 +54,7 @@ const services = [
     title: "Projetos Personalizados",
     description: "Expansões, múltiplas unidades e consumo elevado. Projetos sob demanda para necessidades específicas.",
     highlight: "Solução sob medida",
-    image: null,
+    images: [],
     hasCarousel: false,
   },
 ];
@@ -67,7 +65,7 @@ const ServicesSection = () => {
       {/* Background decoration */}
       <div 
         className="absolute inset-0 opacity-5 bg-cover bg-center"
-        style={{ backgroundImage: `url(${empresasImg})` }}
+        style={{ backgroundImage: `url(${empresa1})` }}
       />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -91,19 +89,16 @@ const ServicesSection = () => {
               className="card-premium overflow-hidden group transition-all duration-300 hover:border-primary/30"
             >
               {/* Image section - Carousel for Empresas and Residências */}
-              {service.image && service.hasCarousel && (
-                <div className="relative h-48 overflow-hidden">
+              {service.hasCarousel && service.images.length > 0 && (
+                <div className="relative h-56 overflow-hidden">
                   <Carousel className="w-full h-full" opts={{ loop: true }}>
                     <CarouselContent className="h-full">
-                      {imagePositions.map((position, idx) => (
+                      {service.images.map((img, idx) => (
                         <CarouselItem key={idx} className="h-full">
-                          <div 
-                            className="w-full h-48 bg-cover transition-transform duration-500"
-                            style={{ 
-                              backgroundImage: `url(${service.image})`,
-                              backgroundPosition: position,
-                              backgroundSize: "200% 200%"
-                            }}
+                          <img 
+                            src={img} 
+                            alt={`Projeto ${service.title} ${idx + 1}`}
+                            className="w-full h-56 object-cover object-top"
                           />
                         </CarouselItem>
                       ))}
@@ -116,12 +111,12 @@ const ServicesSection = () => {
               )}
               
               {/* Single image for other cards */}
-              {service.image && !service.hasCarousel && (
-                <div className="relative h-40 overflow-hidden">
+              {!service.hasCarousel && service.images.length > 0 && (
+                <div className="relative h-48 overflow-hidden">
                   <img 
-                    src={service.image} 
+                    src={service.images[0]} 
                     alt={`Projeto ${service.title}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
                 </div>
