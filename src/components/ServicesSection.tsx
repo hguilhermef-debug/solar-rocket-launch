@@ -10,6 +10,7 @@ import residencia4 from "@/assets/residencia-4.png";
 import usina1 from "@/assets/usina-1.jpg";
 import rural1 from "@/assets/rural-1.jpg";
 import rural2 from "@/assets/rural-2.jpg";
+import heroBg from "@/assets/hero-solar.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -66,11 +67,12 @@ const services = [
 const ServicesSection = () => {
   return (
     <section className="py-16 md:py-24 bg-card relative overflow-hidden">
-      {/* Background decoration */}
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 opacity-5 bg-cover bg-center"
-        style={{ backgroundImage: `url(${empresa1})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
