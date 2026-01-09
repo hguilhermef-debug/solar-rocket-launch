@@ -5,31 +5,43 @@ const WHATSAPP_LINK = "https://wa.me/5511951296429?text=Ol%C3%A1!%20Venho%20do%2
 interface WhatsAppButtonProps {
   className?: string;
   size?: "default" | "large" | "small";
+  showOnlineStatus?: boolean;
 }
 
-const WhatsAppButton = ({ className = "", size = "default" }: WhatsAppButtonProps) => {
+const WhatsAppButton = ({ className = "", size = "default", showOnlineStatus = true }: WhatsAppButtonProps) => {
   const sizeClasses = {
-    small: "px-5 py-3 text-sm gap-2",
-    default: "px-6 py-4 text-base gap-2",
-    large: "px-8 py-5 text-lg gap-3",
+    small: "px-4 py-3 text-xs sm:text-sm gap-2",
+    default: "px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base gap-2",
+    large: "px-5 sm:px-8 py-4 sm:py-5 text-base sm:text-lg gap-2 sm:gap-3",
   };
 
   const iconSizes = {
-    small: 18,
-    default: 22,
-    large: 26,
+    small: 16,
+    default: 20,
+    large: 24,
   };
 
   return (
-    <a
-      href={WHATSAPP_LINK}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`btn-whatsapp text-primary-foreground font-bold ${sizeClasses[size]} ${className}`}
-    >
-      <WhatsAppIcon size={iconSizes[size]} />
-      SOLICITAR ORÇAMENTO AGORA
-    </a>
+    <div className="flex flex-col items-center gap-2">
+      <a
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`btn-whatsapp text-primary-foreground font-bold whitespace-nowrap ${sizeClasses[size]} ${className}`}
+      >
+        <WhatsAppIcon size={iconSizes[size]} />
+        <span className="whitespace-nowrap">SOLICITAR ORÇAMENTO AGORA</span>
+      </a>
+      {showOnlineStatus && (
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground whitespace-nowrap">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          <span>Orçamento em até 2 minutos</span>
+        </div>
+      )}
+    </div>
   );
 };
 
