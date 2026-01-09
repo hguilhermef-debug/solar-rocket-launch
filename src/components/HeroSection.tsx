@@ -40,7 +40,9 @@ const HeroSection = () => {
         </p>
         
         {/* CTA */}
-        <WhatsAppButton size="large" className="mb-8" />
+        <div className="mb-8">
+          <WhatsAppButton size="large" />
+        </div>
         
         {/* Trust indicators */}
         <div className="flex flex-wrap justify-center gap-6 md:gap-12 mt-8">
