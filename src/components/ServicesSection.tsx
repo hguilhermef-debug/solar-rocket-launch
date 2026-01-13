@@ -80,8 +80,8 @@ const ServicesSection = () => {
             Nossas Soluções
           </span>
           <h2 className="section-title text-foreground mb-4">
-            Para Quem é a Energia Solar da{" "}
-            <span className="text-gradient-blue">Ecosolartec</span>
+            Veja Nossas Últimas{" "}
+            <span className="text-gradient-blue">Instalações:</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Atendemos todos os perfis de consumo com projetos personalizados e eficientes
