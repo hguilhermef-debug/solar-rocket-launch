@@ -5,9 +5,9 @@ const projects = [
   { location: "Barueri - SP", modules: 192, economy: "R$ 120.000,00", type: "Empresarial" },
   { location: "Santana de Parnaíba - SP", modules: 280, economy: "R$ 192.000,00", type: "Empresarial" },
   { location: "Votuporanga - SP", modules: 400, economy: "R$ 312.000,00", type: "Empresarial" },
-  { location: "Várzea Paulista - SP", modules: 220, economy: "R$ 144.000,00", type: "Empresarial" },
-  { location: "Osasco - SP", modules: 198, economy: "R$ 120.000,00", type: "Empresarial" },
   { location: "Alphaville - SP", modules: 30, economy: "R$ 20.400,00", type: "Residencial" },
+  { location: "Cotia - SP", modules: 24, economy: "R$ 16.800,00", type: "Residencial" },
+  { location: "Jundiaí - SP", modules: 36, economy: "R$ 24.000,00", type: "Residencial" },
 ];
 
 const ResultsSection = () => {
