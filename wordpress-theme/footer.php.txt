@@ -1,0 +1,64 @@
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Company Info -->
+            <div class="footer-column">
+                <h4>Ecosolartec</h4>
+                <p>Especialistas em energia solar fotovoltaica. Transformando a luz do sol em economia real para você.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h4>Links Rápidos</h4>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'footer',
+                    'container'      => false,
+                    'items_wrap'     => '<nav>%3$s</nav>',
+                    'fallback_cb'    => function() {
+                        echo '<nav>
+                            <a href="#servicos">Serviços</a>
+                            <a href="#resultados">Resultados</a>
+                            <a href="#como-funciona">Como Funciona</a>
+                            <a href="#contato">Contato</a>
+                        </nav>';
+                    }
+                ));
+                ?>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-column">
+                <h4>Serviços</h4>
+                <a href="#">Residencial</a>
+                <a href="#">Empresarial</a>
+                <a href="#">Rural</a>
+                <a href="#">Usinas Solares</a>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+                <h4>Contato</h4>
+                <p><?php echo esc_html(get_theme_mod('contact_phone', '(11) 95129-6429')); ?></p>
+                <p><?php echo esc_html(get_theme_mod('contact_email', 'contato@ecosolartec.com.br')); ?></p>
+                <p><?php echo esc_html(get_theme_mod('contact_address', 'São Paulo, SP - Brasil')); ?></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <?php echo date('Y'); ?> Ecosolartec. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp">
+    <?php echo ecosolartec_whatsapp_icon(32); ?>
+</a>
+
+<?php wp_footer(); ?>
+</body>
+</html>

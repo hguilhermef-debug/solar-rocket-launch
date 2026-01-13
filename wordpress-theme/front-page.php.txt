@@ -1,0 +1,352 @@
+<?php
+/**
+ * Front Page Template
+ * 
+ * @package Ecosolartec
+ */
+
+get_header();
+?>
+
+<!-- Hero Section -->
+<section class="hero-section" id="inicio">
+    <?php 
+    $hero_bg = get_theme_mod('hero_background');
+    if ($hero_bg): 
+    ?>
+        <div class="hero-bg" style="background-image: url('<?php echo esc_url($hero_bg); ?>');"></div>
+    <?php endif; ?>
+    
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span>⚡</span>
+            <span>Energia Solar Fotovoltaica</span>
+        </div>
+        
+        <h1 class="hero-title">
+            <?php 
+            $title = get_theme_mod('hero_title', 'Reduza sua conta de luz em até 95%');
+            $parts = explode(' ', $title);
+            $highlight_words = array_slice($parts, -2);
+            $normal_words = array_slice($parts, 0, -2);
+            echo esc_html(implode(' ', $normal_words));
+            ?> 
+            <span class="text-gradient-green"><?php echo esc_html(implode(' ', $highlight_words)); ?></span>
+        </h1>
+        
+        <p class="hero-subtitle">
+            <?php echo esc_html(get_theme_mod('hero_subtitle', 'Projetos personalizados para residências, empresas e propriedades rurais. Financiamento facilitado e instalação profissional.')); ?>
+        </p>
+        
+        <div style="margin-bottom: 32px;">
+            <a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <?php echo ecosolartec_whatsapp_icon(24); ?>
+                <span>SOLICITAR ORÇAMENTO AGORA</span>
+            </a>
+            <div class="online-status">
+                <span class="online-dot"></span>
+                <span>Orçamento em até 2 minutos</span>
+            </div>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; color: hsl(var(--muted-foreground)); font-size: 0.875rem;">
+            <span>✓ Financiamento em até 72x</span>
+            <span>✓ Garantia de 25 anos</span>
+            <span>✓ Instalação em até 30 dias</span>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section" id="estatisticas">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 class="text-gradient-green"><?php echo esc_html(get_theme_mod('stat_1_number', '+10')); ?></h3>
+                <p><?php echo esc_html(get_theme_mod('stat_1_label', 'Anos de Experiência')); ?></p>
+            </div>
+            <div class="stat-item">
+                <h3 class="text-gradient-blue"><?php echo esc_html(get_theme_mod('stat_2_number', '+850')); ?></h3>
+                <p><?php echo esc_html(get_theme_mod('stat_2_label', 'Projetos Entregues')); ?></p>
+            </div>
+            <div class="stat-item">
+                <h3 class="text-gradient-green"><?php echo esc_html(get_theme_mod('stat_3_number', '+12MW')); ?></h3>
+                <p><?php echo esc_html(get_theme_mod('stat_3_label', 'Potência Instalada')); ?></p>
+            </div>
+            <div class="stat-item">
+                <h3 class="text-gradient-blue"><?php echo esc_html(get_theme_mod('stat_4_number', '95%')); ?></h3>
+                <p><?php echo esc_html(get_theme_mod('stat_4_label', 'Economia Garantida')); ?></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section" id="servicos">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="hero-badge">Nossas Soluções</span>
+            <h2 class="section-title">
+                Veja Nossas Últimas <span class="text-gradient-blue">Instalações:</span>
+            </h2>
+            <p style="color: hsl(var(--muted-foreground)); max-width: 600px; margin: 0 auto;">
+                Atendemos todos os perfis de consumo com projetos personalizados e eficientes
+            </p>
+        </div>
+        
+        <div class="services-grid">
+            <!-- Residencial -->
+            <div class="service-card">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/residencial.jpg'); ?>" alt="Energia Solar Residencial">
+                <div class="service-card-content">
+                    <h3>Residencial</h3>
+                    <p>Reduza até 95% da sua conta de luz com sistemas dimensionados para sua casa.</p>
+                    <a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer" style="width: 100%; justify-content: center; padding: 12px 20px; font-size: 0.875rem;">
+                        <?php echo ecosolartec_whatsapp_icon(18); ?>
+                        <span>SOLICITAR ORÇAMENTO AGORA</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Empresarial -->
+            <div class="service-card">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/empresarial.jpg'); ?>" alt="Energia Solar Empresarial">
+                <div class="service-card-content">
+                    <h3>Empresarial</h3>
+                    <p>Aumente a competitividade do seu negócio reduzindo custos operacionais.</p>
+                    <a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer" style="width: 100%; justify-content: center; padding: 12px 20px; font-size: 0.875rem;">
+                        <?php echo ecosolartec_whatsapp_icon(18); ?>
+                        <span>SOLICITAR ORÇAMENTO AGORA</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Rural -->
+            <div class="service-card">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/rural.jpg'); ?>" alt="Energia Solar Rural">
+                <div class="service-card-content">
+                    <h3>Rural</h3>
+                    <p>Energia sustentável para irrigação, ordenha e todas as atividades do campo.</p>
+                    <a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer" style="width: 100%; justify-content: center; padding: 12px 20px; font-size: 0.875rem;">
+                        <?php echo ecosolartec_whatsapp_icon(18); ?>
+                        <span>SOLICITAR ORÇAMENTO AGORA</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Usinas -->
+            <div class="service-card">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/usinas.jpg'); ?>" alt="Usinas Solares">
+                <div class="service-card-content">
+                    <h3>Usinas Solares</h3>
+                    <p>Projetos de grande porte para geração distribuída e investimento.</p>
+                    <a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer" style="width: 100%; justify-content: center; padding: 12px 20px; font-size: 0.875rem;">
+                        <?php echo ecosolartec_whatsapp_icon(18); ?>
+                        <span>SOLICITAR ORÇAMENTO AGORA</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Results Section -->
+<section class="results-section" id="resultados">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="hero-badge">Resultados Comprovados</span>
+            <h2 class="section-title">
+                Economia Real dos Nossos <span class="text-gradient-green">Clientes</span>
+            </h2>
+        </div>
+        
+        <div class="results-grid">
+            <!-- Empresarial Projects -->
+            <div class="result-card">
+                <div class="location">Barueri - SP</div>
+                <div class="modules">192 módulos instalados</div>
+                <div class="economy">R$ 120.000,00</div>
+                <span style="font-size: 0.75rem; color: hsl(var(--muted-foreground));">economia em 25 anos</span>
+                <span class="type empresarial">Empresarial</span>
+            </div>
+            
+            <div class="result-card">
+                <div class="location">Santana de Parnaíba - SP</div>
+                <div class="modules">280 módulos instalados</div>
+                <div class="economy">R$ 192.000,00</div>
+                <span style="font-size: 0.75rem; color: hsl(var(--muted-foreground));">economia em 25 anos</span>
+                <span class="type empresarial">Empresarial</span>
+            </div>
+            
+            <div class="result-card">
+                <div class="location">Votuporanga - SP</div>
+                <div class="modules">400 módulos instalados</div>
+                <div class="economy">R$ 312.000,00</div>
+                <span style="font-size: 0.75rem; color: hsl(var(--muted-foreground));">economia em 25 anos</span>
+                <span class="type empresarial">Empresarial</span>
+            </div>
+            
+            <!-- Residencial Projects -->
+            <div class="result-card">
+                <div class="location">Alphaville - SP</div>
+                <div class="modules">30 módulos instalados</div>
+                <div class="economy">R$ 20.400,00</div>
+                <span style="font-size: 0.75rem; color: hsl(var(--muted-foreground));">economia em 25 anos</span>
+                <span class="type residencial">Residencial</span>
+            </div>
+            
+            <div class="result-card">
+                <div class="location">Cotia - SP</div>
+                <div class="modules">24 módulos instalados</div>
+                <div class="economy">R$ 16.800,00</div>
+                <span style="font-size: 0.75rem; color: hsl(var(--muted-foreground));">economia em 25 anos</span>
+                <span class="type residencial">Residencial</span>
+            </div>
+            
+            <div class="result-card">
+                <div class="location">Jundiaí - SP</div>
+                <div class="modules">36 módulos instalados</div>
+                <div class="economy">R$ 24.000,00</div>
+                <span style="font-size: 0.75rem; color: hsl(var(--muted-foreground));">economia em 25 anos</span>
+                <span class="type residencial">Residencial</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="how-it-works-section" id="como-funciona">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="hero-badge">Processo Simples</span>
+            <h2 class="section-title">
+                Como <span class="text-gradient-blue">Funciona</span>
+            </h2>
+        </div>
+        
+        <div class="steps-grid">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <h3>Solicite um Orçamento</h3>
+                <p>Entre em contato pelo WhatsApp e envie sua conta de luz para análise gratuita.</p>
+            </div>
+            
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <h3>Projeto Personalizado</h3>
+                <p>Nossa equipe desenvolve o projeto ideal para seu perfil de consumo.</p>
+            </div>
+            
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <h3>Instalação Profissional</h3>
+                <p>Técnicos certificados realizam a instalação com segurança e qualidade.</p>
+            </div>
+            
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <h3>Economize</h3>
+                <p>Comece a economizar até 95% na sua conta de luz imediatamente.</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <?php echo ecosolartec_whatsapp_icon(24); ?>
+                <span>SOLICITAR ORÇAMENTO AGORA</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="why-choose-section" id="diferenciais">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="hero-badge">Por que Escolher</span>
+            <h2 class="section-title">
+                Diferenciais <span class="text-gradient-green">Ecosolartec</span>
+            </h2>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Garantia de 25 Anos</h3>
+                <p>Equipamentos de primeira linha com garantia estendida para sua tranquilidade.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3>Instalação Rápida</h3>
+                <p>Projeto completo instalado em até 30 dias, sem burocracia.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <h3>Financiamento Facilitado</h3>
+                <p>Parcele em até 72x com parcelas menores que sua conta de luz atual.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h3>Suporte Completo</h3>
+                <p>Acompanhamento desde o projeto até a homologação junto à concessionária.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Environment Section -->
+<section class="environment-section" id="sustentabilidade">
+    <div class="container">
+        <div class="environment-content">
+            <div class="environment-text">
+                <span class="hero-badge">Sustentabilidade</span>
+                <h2 class="section-title" style="text-align: left;">
+                    Cuide do <span class="text-gradient-green">Planeta</span>
+                </h2>
+                <p>Ao escolher energia solar, você contribui diretamente para a redução de emissões de CO2 e preservação do meio ambiente. É economia para o bolso e para o planeta.</p>
+                <a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    <?php echo ecosolartec_whatsapp_icon(24); ?>
+                    <span>SOLICITAR ORÇAMENTO AGORA</span>
+                </a>
+            </div>
+            <div class="environment-image">
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/ambiente.jpg'); ?>" alt="Energia Solar e Meio Ambiente">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta-section" id="contato">
+    <div class="container">
+        <span class="hero-badge">Comece Agora</span>
+        <h2 class="section-title">
+            Pronto para <span class="text-gradient-green">Economizar</span>?
+        </h2>
+        <p>Solicite agora seu orçamento gratuito e descubra quanto você pode economizar com energia solar.</p>
+        
+        <a href="<?php echo esc_url(ecosolartec_get_whatsapp_url()); ?>" class="btn-primary" target="_blank" rel="noopener noreferrer">
+            <?php echo ecosolartec_whatsapp_icon(24); ?>
+            <span>SOLICITAR ORÇAMENTO AGORA</span>
+        </a>
+        
+        <div class="online-status" style="margin-top: 16px;">
+            <span class="online-dot"></span>
+            <span>Orçamento em até 2 minutos</span>
+        </div>
+    </div>
+</section>
+
+<?php get_footer(); ?>
