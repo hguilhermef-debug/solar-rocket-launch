@@ -1,6 +1,6 @@
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 
-const WHATSAPP_LINK = "https://wa.me/5511951296429?text=Ol%C3%A1!%20Venho%20do%20site%20e%20gostaria%20de%20solicitar%20um%20Or%C3%A7amento%20Agora!%20";
+const WHATSAPP_LINK = "https://wa.me/5511972262110?text=Olá!%20Venho%20do%20site%20e%20gostaria%20de%20solicitar%20um%20Orçamento%20Agora!%20";
 
 interface WhatsAppButtonProps {
   className?: string;
